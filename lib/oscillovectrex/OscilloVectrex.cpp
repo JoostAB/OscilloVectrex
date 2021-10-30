@@ -61,64 +61,14 @@ void OscilloVectrex::setY(coordElement y) {
 
 void OscilloVectrex::line(Coord* pStart, Coord* pEnd) {
   line(pStart->x, pStart->y, pEnd->x, pEnd->y);
-  // if (pStart->equals(pEnd)) return;
-
-  // if (pStart->y == pEnd->y) this->hLine(pStart, pEnd);
-
-  // if (pStart->x == pEnd->x) this->vLine(pStart, pEnd);
-
-  // coordElement startX = pStart->x;
-  // coordElement startY = pStart->y;
-  // coordElement endX = pEnd->x;
-  // coordElement endY = pEnd->y;
-
-  // uint8_t steep = abs(endY - startY) > abs(endX - startX);
-
-  // if (steep) {
-  //   jbswap(startX, startY);
-  //   jbswap(endX, endY);
-  // }
-
-  // coordElement dx = endX - startX;
-  // coordElement dy = abs(endY - startY);
-  // coordElement err = dx / 2;
-  
-  // int8_t xstep = 1;
-  // int8_t ystep = 1;
-
-  // if (startX > endX)  xstep = -1;
-  //   if (startY > endY) ystep = -1;
-  
-  // moveTo(pStart);
-
-  // while (startX != endX) {
-  //   startX = startX + xstep;
-  //   if (steep) {
-  //     moveTo(startY, startX);
-  //   } else {
-  //     moveTo(startX, startY);
-  //   }
-
-  //   err -= dy;
-  //   if (err < 0) {
-  //     startY += ystep;
-  //     err += dx;
-  //   }
-    
-  // }
 }
 
 void OscilloVectrex::line(coordElement xStart, coordElement yStart, coordElement xEnd, coordElement yEnd) {
-    if ((xStart == xEnd) && (yStart == yEnd)) return;
+  if ((xStart == xEnd) && (yStart == yEnd)) return;
 
   if (yStart == yEnd) this->hLine(xStart, yStart, xEnd);
 
   if (yStart == xEnd) this->vLine(xStart, yStart, yEnd);
-
-  // coordElement startX = pStart->x;
-  // coordElement startY = pStart->y;
-  // coordElement endX = pEnd->x;
-  // coordElement endY = pEnd->y;
 
   uint8_t steep = abs(yEnd - yStart) > abs(xEnd - xStart);
 
@@ -224,6 +174,7 @@ void OscilloVectrex::arc(coordElement xStart, coordElement yStart, coordElement 
   
   moveTo(xStart, yStart);
 
+  
 
 }
 
